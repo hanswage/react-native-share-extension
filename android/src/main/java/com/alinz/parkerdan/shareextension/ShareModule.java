@@ -75,7 +75,7 @@ public class ShareModule extends ReactContextBaseJavaModule {
                 } else if (type.startsWith("image/")) {
                     Uri imageUri = handleSendImage(intent);
                     
-                    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
                         value = "file://" + RealPathUtil.getRealPathFromURI(currentActivity, imageUri);
                     } else {
                         if (imageUri.toString().startsWith("content://")) {
